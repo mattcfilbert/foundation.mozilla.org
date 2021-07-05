@@ -2,8 +2,9 @@ import { CountUp } from 'countup.js';
 
 export const initYoutubeRegretsResearchCountUp = () => {
   if ('IntersectionObserver' in window) {
-    const reportCountUp = new CountUp('reports-count-up', 5234);
-    const volunteersCountUp = new CountUp('volunteers-count-up', 1662);
+    const localeSeparator = get_format('THOUSAND_SEPARATOR');
+    const reportCountUp = new CountUp('reports-count-up', 5234, { separator: localeSeparator });
+    const volunteersCountUp = new CountUp('volunteers-count-up', 1662, { separator: localeSeparator });
     const countriesCountUp = new CountUp('countries-count-up', 91);
 
     let observer = new IntersectionObserver(
