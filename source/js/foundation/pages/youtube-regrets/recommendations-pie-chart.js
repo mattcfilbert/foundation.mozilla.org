@@ -25,7 +25,6 @@ export const initYouTubeRegretsRecommendationsPieChart = () => {
       }]
     },
     options: {
-      locale: 'fr',
       plugins: {
         legend: {
           labels: {

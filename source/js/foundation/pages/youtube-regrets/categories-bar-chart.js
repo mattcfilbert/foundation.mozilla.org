@@ -73,7 +73,6 @@ export const initYouTubeRegretsCategoriesBarChart = () => {
     options: {
       responsive: false,
       indexAxis: 'y',
-      locale: document.documentElement.lang,
       plugins: {
         legend: {
           display: false
