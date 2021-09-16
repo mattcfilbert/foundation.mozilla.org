@@ -1,0 +1,15 @@
+{% extends "./base_streamfield_block.html" %}
+{% load static wagtailcore_tags i18n localization %}
+
+{% block block_content %}
+    <div class="callpower">
+        <input type="hidden" name="campaignId" value="{{ value.campaignId }}">
+        <input type="text" name="userPhone" placeholder='{% trans "Your phone number" %}'>
+        <!--
+            <input type="text" name="userLocation" placeholder='{% trans "Your location" %}'>
+            <input type="text" name="userCountry" placeholder='{% trans "Your country" %}'>
+        -->
+        <button class="make-the-call">{% trans "Make the call" %}</button>
+        <script src='{% static "_js/callpower.compiled.js" %}'' async defer></script>
+    </div>
+{% endblock %}

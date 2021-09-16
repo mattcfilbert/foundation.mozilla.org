@@ -34,5 +34,6 @@ base_fields = [
     ('recent_blog_entries', customblocks.RecentBlogEntries()),
     ('blog_set', customblocks.BlogSetBlock()),
     ('airtable', customblocks.AirTableBlock()),
+    ('callpower', customblocks.CallpowerBlock()),
     ('typeform', customblocks.TypeformBlock()),
 ]
