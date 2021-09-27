@@ -96,7 +96,7 @@
           <ul class="pl-4">
             {% for item in product.tips_to_protect_yourself %}
               {% with update=item %}
-                <li> {{update}} </li>
+                <li> {{update|richtext}} </li>
               {% endwith %}
             {% endfor %}
           </ul>
