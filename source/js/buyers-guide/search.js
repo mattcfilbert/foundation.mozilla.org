@@ -176,6 +176,21 @@ const SearchFilter = {
     SearchFilter.checkForEmptyNotice();
   },
 
+  filterCategory: (category) => {
+    ALL_PRODUCTS.forEach((product) => {
+      if (SearchFilter.testCateories(product, category)) {
+        product.classList.remove(`d-none`);
+        product.classList.add(`d-flex`);
+      } else {
+        product.classList.add(`d-none`);
+        product.classList.remove(`d-flex`);
+      }
+    });
+
+    SearchFilter.moveCreepyFace();
+    SearchFilter.checkForEmptyNotice();
+  },
+
   checkForEmptyNotice: () => {
     let qs = `figure.product-box:not(.d-none)`;
 
