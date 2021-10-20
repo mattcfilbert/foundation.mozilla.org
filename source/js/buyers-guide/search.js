@@ -3,6 +3,7 @@ const NO_RESULTS_NOTICE = document.getElementById(
   `product-filter-no-results-notice`
 );
 const FILTERS = [`company`, `name`, `blurb`, `worst-case`];
+const SORTS = [`company`, `name`, `blurb`];
 const SUBMIT_PRODUCT = document.querySelector(".recommend-product");
 const CREEPINESS_FACE = document.querySelector(".creep-o-meter-information");
 
@@ -127,8 +128,36 @@ const SearchFilter = {
       }
     });
 
+    SearchFilter.sortProducts();
+
     SearchFilter.moveCreepyFace();
     SearchFilter.checkForEmptyNotice();
+  },
+
+  sortProducts: () => {
+    const container = document.querySelector(`.product-box-list`);
+    const list = [...container.querySelectorAll(`.product-box`)];
+
+    list.sort((a, b) => {
+
+      for (field of SORTS) {
+        const qs = `.product-${field}`;
+        const [propertyA, propertyB] = [
+          a.querySelector(qs),
+          b.querySelector(qs),
+        ];
+        const [propertyNameA, propertyNameB] = [
+          (propertyA.value || propertyA.textContent).toLowerCase(),
+          (propertyB.value || propertyB.textContent).toLowerCase(),
+        ];
+
+        if(propertyNameA !== propertyNameB || field === SORTS[SORTS.length - 1]) {
+          return propertyNameA < propertyNameB ? -1 ? propertyNameA > propertyNameB ? 1 : 0;
+        }
+      }
+    });
+
+    list.forEach((p) => container.append(p));
   },
 
   filterCategory: (category) => {
@@ -142,6 +171,7 @@ const SearchFilter = {
       }
     });
 
+    SearchFilter.sortProducts();
     SearchFilter.moveCreepyFace();
     SearchFilter.checkForEmptyNotice();
   },
