@@ -79,6 +79,26 @@ class Callpower(TranslatableMixin, CTA):
         blank=True
     )
 
+    # Share-progress identifiers for the social share block:
+
+    share_twitter = models.CharField(
+        max_length=20,
+        help_text='Share Progress id for twitter button, including the sp_... prefix',
+        blank=True,
+    )
+
+    share_facebook = models.CharField(
+        max_length=20,
+        help_text='Share Progress id for facebook button, including the sp_... prefix',
+        blank=True,
+    )
+
+    share_email = models.CharField(
+        max_length=20,
+        help_text='Share Progress id for email button, including the sp_... prefix',
+        blank=True,
+    )
+
     translatable_fields = [
         # Fields from the CTA model
         TranslatableField('header'),
@@ -87,6 +107,12 @@ class Callpower(TranslatableMixin, CTA):
         TranslatableField('call_button_label'),
         TranslatableField('success_heading'),
         TranslatableField('success_text'),
+        TranslatableField('share_link'),
+        TranslatableField('share_link_text'),
+        # Sync-only fields
+        SynchronizedField('share_twitter'),
+        SynchronizedField('share_facebook'),
+        SynchronizedField('share_email'),
     ]
 
     class Meta(TranslatableMixin.Meta):
