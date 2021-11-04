@@ -29,6 +29,25 @@ const TabbedProfileFilters = ({
   const [showAllSubFilteredItems, setShowAllSubFilteredItems] = useState(null);
   const [enableSubfiltering, setEnableSubFiltering] = useState(false);
 
+  const options = [
+    {
+      filter_label: "Gender, Tech & Intersectionality",
+      filter_value: "Gender, Tech & Intersectionality",
+    },
+    {
+      filter_label: "Misinformation and Disinformation",
+      filter_value: "Misinformation and Disinformation",
+    },
+    {
+      filter_label: "Rethinking Power & Ethics",
+      filter_value: "Rethinking Power & Ethics",
+    },
+    {
+      filter_label: "Sustainability & Climate change",
+      filter_value: "Sustainability & Climate change",
+    },
+  ];
+
   // Component is loaded
   useEffect(() => {
     // This component has been loaded and resolve promise
@@ -165,7 +184,7 @@ const TabbedProfileFilters = ({
             showAll={showAllSubFilteredItems}
             onChangeShowAll={(e) => handleSelectAllSubfilter(e)}
             onChangeSubfilter={(e) => handleSelectSubfilter(e)}
-            subfilters={subfilterOptionsList}
+            subfilters={options}
             selectedFilters={selectedSubfilters}
           />
         )}
