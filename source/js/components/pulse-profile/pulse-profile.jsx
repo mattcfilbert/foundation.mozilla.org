@@ -32,7 +32,7 @@ const PulseProfile = ({ profile }) => {
           </a>
 
           {/* Social Icons */}
-          <div className="tw-flex tw-flex-row tw-space-x-2">
+          <div className="tw-flex tw-flex-row tw-space-x-2 tw-mt-[7px]">
             {profile.twitter && (
               <a
                 href={profile.twitter}
