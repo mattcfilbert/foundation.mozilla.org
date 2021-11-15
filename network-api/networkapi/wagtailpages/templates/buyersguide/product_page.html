@@ -29,7 +29,7 @@
 {% block guts %}
 <div class="text-center product-header bg-product-image{% if product.draft %} draft-product{% endif %}">
   <div class="container medium:tw-grid tw-grid-cols-12 tw-gap-x-6">
-    <div class="tw-col-start-3 tw-col-end-11 tw--mx-6">
+    <div class="tw-col-start-3 tw-col-end-11 small:tw--mx-6">
       <div class="tw-w-full  product-header-content {% if product.privacy_ding %}show-privacy-ding{% endif %}">
         <img
           class="thumb-border tw-mx-auto"
@@ -42,7 +42,7 @@
     </div>
   </div>
 </div>
-{% with section_class="tw-col-start-3 tw-col-end-11 tw--mx-6" %}
+{% with section_class="tw-col-start-3 tw-col-end-11 small:tw--mx-6" %}
 <div class="container product-detail medium:tw-grid tw-grid-cols-12 tw-gap-x-6">
   <div class="{{section_class}} tw-relative">
 
